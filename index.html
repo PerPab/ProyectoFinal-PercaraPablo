@@ -8,6 +8,7 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/estilos.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
 
@@ -20,9 +21,9 @@
             <div
                 class="jumbotron bg-jumbotron text-white d-flex flex-column justify-content-center align-items-center text-center">
                 <div class="texto-cabecera">
-                    <h1 class="display-3 text-capitalize text-center">INMOBILIARIA <b>COSMOS</b></h1>
+                    <h1 class="titulo display-3 text-capitalize text-center">INMOBILIARIA <b>COSMOS</b></h1>
                     <hr />
-                    <p class="lead text-center"><b><i>Cambiando el futuro de los argentinos</i></b></p>
+                    <p class="titulo lead text-center"><b><i>Cambiando el futuro de los argentinos</i></b></p>
                 </div>
             </div>
 
@@ -30,28 +31,22 @@
 
         <!--Cierre cabecera-->
         <div class="row">
-            <nav class="nav navbar navbar-dark bg-dark justify-content-center opacity-50">
+            <nav class="nav navbar navbar-dark bg-dark justify-content-start mb-5 bg-opacity-50">
 
-                <a href="" class="nav-item text-white link">Home</a>
-                <a href="" class="nav-item text-white link">Quienes somos</a>
-                <a href="" class="nav-item text-white link">Publica tu propiedad</a>
+                <a href="./index.html" class="nav-item text-white link mb-2 mt-1">Home</a>
+                <a href="" class="nav-item text-white link mb-2 mt-1">Quienes somos</a>
+                <a href="" class="nav-item text-secondarey link mb-2 mt-1">Publica tu propiedad</a>
             </nav>
         </div>
         <!--Cierre navbar-->
 
-        <div class="row">
-            <h2 class="display-7 text-center mt-4 mb-4 text-white"><b>~ Propiedades destacadas ~</b></h2>
 
 
-        </div>
+        <div class="row mb-5 justify-content-evenly" data-aos="fade-up" data-aos-delay="300">
 
 
-
-        <div class="row row-cols-12 cards mb-5">
-
-
-            <div class="col col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
-                <div class="card" style="width: 20rem;">
+            <div class="col col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
+                <div class="card cards" style="width: 20rem;">
                     <div class="card-header text-center">
                         <h2 class="card-title text-danger">En Oferta!!</h2>
                         <h4 class="card-title text-primary">USD 95.000</h4>
@@ -76,14 +71,14 @@
                                 21.</i> Ideal para familia numerosa. Espacio para quincho y parrilla.</p>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="" class="btn btn-primary">Comprar ya!</a>
+                        <a href="./form.html" class="btn btn-primary"><b>Comprar ya!</b></a>
                     </div>
                 </div>
 
             </div>
 
-            <div class="col col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
-                <div class="card" style="width: 20rem;">
+            <div class="col col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
+                <div class="card cards" style="width: 20rem;">
                     <div class="card-header text-center">
                         <h2 class="card-title text-danger">En Oferta!!</h2>
                         <h4 class="card-title text-primary">USD 80.000</h4>
@@ -104,18 +99,19 @@
                             </div>
                         </div>
                         <p class="card-text"><b>Fabbroni<br>18,70°N 29,20°E</b></p>
-                        <p class="card-text">Pequeño y acogedor cráter de 10km cuadrados. Ubicado cerca de los restos de
+                        <p class="card-text">Pequeño y acogedor cráter de 10km cuadrados. Ubicado cerca de los
+                            restos de
                             la misión <i>Apollo 17.</i> Date el gusto de fotografiar a la familia Armstrong!</p>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="" class="btn btn-primary">Comprar ya!</a>
+                        <a href="./form.html" class="btn btn-primary"><b>Comprar ya!</b></a>
                     </div>
                 </div>
 
             </div>
 
-            <div class="col col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
-                <div class="card" style="width: 20rem;">
+            <div class="col col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
+                <div class="card cards" style="width: 20rem;">
                     <div class="card-header text-center">
                         <h2 class="card-title text-danger">En Oferta!!</h2>
                         <h4 class="card-title text-primary">USD 79.000</h4>
@@ -142,14 +138,14 @@
                         </p>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="" class="btn btn-primary">Comprar ya!</a>
+                        <a href="./form.html" class="btn btn-primary"><b>Comprar ya!</b></a>
                     </div>
                 </div>
 
             </div>
 
-            <div class="col col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
-                <div class="card" style="width: 20rem;">
+            <div class="col col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3">
+                <div class="card cards" style="width: 20rem;">
                     <div class="card-header text-center">
                         <h2 class="card-title text-danger">En Oferta!!</h2>
                         <h4 class="card-title text-primary">USD 79.000</h4>
@@ -176,14 +172,11 @@
                         </p>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="" class="btn btn-primary">Comprar ya!</a>
+                        <a href="./form.html" class="btn btn-primary"><b>Comprar ya!</b></a>
                     </div>
                 </div>
 
             </div>
-
-
-
 
 
 
@@ -214,6 +207,10 @@
     </div>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

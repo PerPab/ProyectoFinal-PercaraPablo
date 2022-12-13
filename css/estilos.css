@@ -1,12 +1,13 @@
 
 body{
     width: 100%;
+    
 }
 .bg-jumbotron{
     background-image: url(../img/fondo-blur-moon.jpg);
     background-size: cover;
     background-position: 30%;
-    height: 40vh;
+    height: 37vh;
     
     
    
@@ -27,37 +28,50 @@ body{
     font-weight: bold;
     border: 1px solid #f1f1f1;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     padding: 0rem;
     padding-left: 0rem;
     padding-right: 0rem;
     width: 80%;
+    height: 80%;
     
 
 }
 
-.cards{
-   
-    justify-content: space-evenly !important ;
 
-    
+
+.cards:hover{
    
+   scale: 1.02; 
+}
+.formulario{
+    font-weight: bold;
+    width: 28rem;
     
 }
+
 .link{
     font-size: 1.2rem;
     font-weight: bold;
     margin-left: 1rem;
     margin-right: 1rem;
 }
+ 
 
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .nav{
         flex-direction: column;
+        justify-content: center;
         
        
        
     }
+    .formulario{
+        width: 100%;
+    }
+    
   }
 
 
