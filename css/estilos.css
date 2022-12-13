@@ -38,7 +38,7 @@ body{
     
 
 }
-
+.cards{width: 20rem;}
 
 
 .cards:hover{
@@ -60,10 +60,12 @@ body{
  
 
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 640px) {
     .nav{
+        
         flex-direction: column;
         justify-content: center;
+        
         
        
        
@@ -71,6 +73,11 @@ body{
     .formulario{
         width: 100%;
     }
+   .cards{
+    width:100%;
+    
+    
+   }
     
   }
 
