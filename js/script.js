@@ -1,13 +1,12 @@
 
 
-let botonPublicar = document.getElementById('btn_publicar');
+
 
 /**------LISTA DE OBJETOS------------ */
 let listaTerrenos = [
     {
         titulo: 'En Oferta',
         precio: 'USD 95.000',
-        imagen: './img/carousel-1/card1-1.png',
         imagen_opcional_1: './img/carousel-1/card1-2.png',
         imagen_opcional_2: './img/carousel-1/card1-3.png',
         ubicacion: 'Posidonius',
@@ -17,7 +16,6 @@ let listaTerrenos = [
     {
         titulo: 'En Oferta',
         precio: 'USD 80.000',
-        imagen: './img/carousel-2/card2-1.png',
         imagen_opcional_1: './img/carousel-2/card2-2.png',
         imagen_opcional_2: './img/carousel-2/card2-3.png',
         ubicacion: 'Fabbroni',
@@ -28,7 +26,6 @@ let listaTerrenos = [
     {
         titulo: 'En Oferta',
         precio: 'USD 79.000',
-        imagen: './img/carousel-3/card-3-1.png',
         imagen_opcional_1: './img/carousel-3/card-3-2.png',
         imagen_opcional_2: './img/carousel-3/card-3-3.png',
         ubicacion: 'Lacus Bonitatis',
@@ -39,7 +36,6 @@ let listaTerrenos = [
     {
         titulo: 'En Oferta',
         precio: 'USD 50.000',
-        imagen: './img/1601.png',
         imagen_opcional_1: './img/1601.png',
         imagen_opcional_2: './img/1601.png',
         ubicacion: 'Lado oscuro de la luna',
@@ -64,9 +60,6 @@ function agregarTerreno(){
                 data-bs-interval="3000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img id="img-1" class="imagen" url= ${terreno.imagen} alt="imagen-1">
-                    </div>
-                    <div class="carousel-item">
                         <img id="img-2" class="imagen" src= ${terreno.imagen_opcional_1} alt="imagen-2">
                     </div>
                     <div class="carousel-item">
@@ -100,8 +93,11 @@ function cargarLista (){
 }
 
 
-
 window.addEventListener('load', agregarTerreno)
+
+let botonPublicar = document.getElementById('btn_enviar')
+console.log(botonPublicar)
+
 
 
 

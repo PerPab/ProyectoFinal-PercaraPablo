@@ -8,6 +8,7 @@
     font-family: 'Rajdhani', sans-serif;
     
 }
+
 body{
     width: 100%;
     
@@ -26,8 +27,6 @@ body{
     background-image: url(../img/fondo-blur.jpg);
     background-size: cover;
     
-    
-
 }
 
 .texto-cabecera{
@@ -70,6 +69,7 @@ body{
     width: 20rem;
     height: 575px;
 }
+
 
 
 .cards:hover{
