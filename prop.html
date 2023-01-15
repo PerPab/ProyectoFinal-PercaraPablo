@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario | Inmobiliaria Cosmos</title>
+    <title>Publicar propiedad | Inmobiliaria Cosmos</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/estilos.css">
@@ -53,92 +53,61 @@
 
             <!--FORMULARIO-->
             <div class="row mt-5 mb-5 justify-content-center" data-aos="fade-up" data-aos-delay="500">
-                <h2 class="text-center text-white mb-3">FORMULARIO DE CONTACTO</h2>
+                <h2 class="text-center text-white mb-3">PUBLICA TU PROPIEDAD</h2>
 
-                <form action="" class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
-                    <!--nombre-->
+                <form id="publicar" class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
+                    <!--titulo-->
                     <div class="form-group mb-1 mt-2 ">
-                        <label for="nombre-usuario">Nombre</label>
-                        <input class="form-control" type="text" id="nombre-usuario">
+                        <label for="titulo">Titulo</label>
+                        <input class="form-control" type="text" id="titulo">
                     </div>
 
-
-                    <!--apellido-->
+                    <!--precio-->
                     <div class="form-group mb-1 ">
-                        <label for="apellido-usuario">Apellido</label>
-                        <input class="form-control" type="text" id="apellido-usuario">
+                        <label for="precio">Precio</label>
+                        <input class="form-control" type="text" id="precio">
                     </div>
 
-                    <!--telefono-->
+                    <!--ubicacion-->
                     <div class="form-group mb-1">
-                        <label for="tel-usuario">Telefono</label>
-                        <input class="form-control" type="tel" id="tel-usuario">
+                        <label for="ubicacion">Ubicacion</label>
+                        <input class="form-control" type="text" id="tel-usuario">
                     </div>
 
-                    <!--E-mail-->
+                    <!--imagen-->
                     <div class="form-group mb-4 ">
-                        <label for="email-usuario">E-mail</label>
-                        <input class="form-control" type="email" id="email-usuario">
+                        <label for="imagen1">Imagen</label>
+                        <input class="form-control" type="text" id="img-1"
+                            placeholder="Pegue la URL de la imagen aqui:">
+                    </div>
+                    <div class="form-group mb-4 ">
+                        <label for="imagen2">Imagen opcional</label>
+                        <input class="form-control" type="text" id="img-2"
+                            placeholder="Pegue la URL de la imagen aqui:">
+                    </div>
+                    <div class="form-group mb-4 ">
+                        <label for="imagen3">Imagen opcional</label>
+                        <input class="form-control" type="text" id="img-3"
+                            placeholder="Pegue la URL de la imagen aqui:">
                     </div>
 
-                    <!--Tipo de contacto-->
-
-                    <label class="mb-2" for="">Tipo de contacto</label>
-                    <div class="form-check mb-1">
-                        <input class="form-check-input" type="radio" name="contacto-usuario-tel"
-                            id="contacto-usuario-tel">
-                        <label class="form-check-label" for="contacto-usuario-tel">Telefono</label>
-                    </div>
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="radio" name="contacto-usuario-email"
-                            id="contacto-usuario-email">
-                        <label class="form-check-label" for="contacto-usuario-email">E-mail</label>
-                    </div>
-
-                    <!--Horario de contacto-->
-                    <div class="form-group form-control mb-2">
-                        <label for="horarios"><b>Seleccionar horario de contacto:</b></label>
-                        <select name="" id="horarios">
-                            <option value="opcion-1">De 07:00hs a 12:00hs</option>
-                            <option value="opcion-2">De 13:00hs a 18:00hs</option>
-                            <option value="opcion-3">De 19:00hs a 24:00hs</option>
-                        </select>
-                    </div>
-
-                    <!--comentario-->
+                    <!--descripcion-->
                     <div class="form-group mt-3">
-                        <label for="comentario">Comentario</label>
-                        <textarea class="form-control" name="comentario" id="comentario" cols="30" rows="5"></textarea>
+                        <label for="descripcion">Descripcion</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" cols="30"
+                            rows="5"></textarea>
                     </div>
 
-                    <!--terminos y condiciones-->
-                    <div class="form-check mt-4">
-                        <input class="form-check-input" type="checkbox" name="terminos" id="terminos">
-                        <label class="form-check-label" for="terminos">Acepto los <a class="text-primary">términos y
-                                condiciones</a>.</label>
-                    </div>
 
-                    <!--enviar-->
+                    <!--Publicar-->
                     <div class="row boton mt-5 mb-4">
-                        <input id="btn_enviar" type="submit" class="btn btn-primary" value="Enviar">
+                        <button id="btn_publicar" class="btn btn-primary">Publicar</button>
                     </div>
 
 
                 </form>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             <div class="row">
@@ -158,9 +127,10 @@
 
 
 
-        <script src="./js/script.js"></script>
+
         <script src="./js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="./js/script.js"></script>
         <script>
             AOS.init();
         </script>
