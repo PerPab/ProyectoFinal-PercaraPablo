@@ -121,6 +121,12 @@ body{
    .texto-info{
     margin: 2vh;
    }
+   .titulo{
+    font-size: 100%;
+   }
+   .jumbotron{
+    height: 60%;
+   }
     
   }
 
