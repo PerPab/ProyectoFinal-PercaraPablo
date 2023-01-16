@@ -36,6 +36,7 @@
                 <a id="btn_index" class="nav-item text-white link mb-2 mt-1">Home</a>
                 <a id="btn_info" class="nav-item text-white link mb-2 mt-1">Quienes somos</a>
                 <a id="btn_prop" class="nav-item text-secondarey link mb-2 mt-1">Publica tu propiedad</a>
+                <a id="ordenar" class="nav-item text-secondarey link mb-2 mt-1">Ordenar por precio</a>
             </nav>
         </div>
         <!--Cierre navbar-->
@@ -73,7 +74,7 @@
             data-aos-delay="500">
             <h2 class="text-center text-white mb-3">FORMULARIO DE CONTACTO</h2>
 
-            <form action="" class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
+            <form class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
                 <!--nombre-->
                 <div class="form-group mb-1 mt-2 ">
                     <label for="nombre-usuario">Nombre</label>
@@ -136,12 +137,9 @@
 
                 <!--enviar-->
                 <div class="row boton mt-5 mb-4">
-                    <input id="btn_enviar" type="submit" class="btn btn-primary" value="Enviar">
+                    <input id="btn_enviar" class="btn btn-primary" value="Enviar">
                 </div>
-
-
             </form>
-
         </div>
 
         <!-------------------------------------------------------------------------------------------------------------------->
@@ -154,7 +152,7 @@
             <form id="publicar" class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
                 <!--titulo-->
                 <div class="form-group mb-1 mt-2 ">
-                    <label for="titulo">Titulo</label>
+                    <label for="titulo">Titulo de la publicacion</label>
                     <input class="form-control" type="text" id="titulo_terreno" placeholder="Ej: En Oferta!">
                 </div>
 
@@ -174,14 +172,8 @@
                 <div class="form-group mb-4 ">
                     <label for="imagen2">Imagen</label>
                     <input class="form-control" type="text" id="img-2-terreno"
-                        placeholder="Pegue la URL de la imagen aqui:">
+                        placeholder="Pegue la direccion de la imagen aqui:">
                 </div>
-                <div class="form-group mb-4 ">
-                    <label for="imagen3">Imagen opcional</label>
-                    <input class="form-control" type="text" id="img-3-terreno"
-                        placeholder="Pegue la URL de la imagen aqui:">
-                </div>
-
                 <!--descripcion-->
                 <div class="form-group mt-3">
                     <label for="descripcion">Descripcion</label>
