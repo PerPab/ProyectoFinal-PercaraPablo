@@ -65,7 +65,7 @@ function agregarTerreno(){
             <p class="card-text" id="descripcion">${terreno.descripcion}</p>
         </div>
         <div class="card-footer text-center">
-            <a name="btn_comprar_name" id="btn_comprar_id" class="btn btn-primary"><b>Comprar ya!</b></a>
+            <a name="btn_comprar_name" id="btn_comprar_id" class="btn btn-primary btn_comprar_clase"><b>Comprar ya!</b></a>
         </div>
         </div>
         </div>`;
@@ -111,15 +111,15 @@ function cargarLista(){
 
 function ordenarMenorAmayor(){
     listaTerrenos.sort(function (a, b) {
-        if (a.precio > b.precio) {
-          return 1;
-        }
-        if (a.precio < b.precio) {
-          return -1;
-        }
-        return 0;
-      });
-      mostrarPrincipal()
+    if (a.precio > b.precio) {
+      return 1;
+    }
+    if (a.precio < b.precio) {
+      return -1;
+    }
+    return 0;
+    });
+    mostrarPrincipal()
 }
   
 
@@ -129,6 +129,7 @@ function mostrarPrincipal(){
     form_publicacion.classList.add('oculta')
     quienes_somos.classList.add('oculta')
     agregarTerreno()
+    actualizarBotones()
 }
 function mostrarInfo(){
     contenedor.classList.add('oculta')
@@ -150,6 +151,15 @@ function MostrarPublicar(){
     quienes_somos.classList.add('oculta')
 }
 
+function actualizarBotones(){
+    let btn_comprar = document.querySelectorAll('.btn_comprar_clase')
+    btn_comprar.forEach(boton =>{
+        console.log(boton)
+        boton.addEventListener('click', mostrarConsulta)
+    });
+}
+
+
 //-----------------------------VISTAS-----------------------------------------------------------------------------------
 
 let btn_index = document.getElementById('btn_index')
@@ -162,10 +172,6 @@ btn_info.addEventListener('click', mostrarInfo)
 let btn_publicacion = document.getElementById('btn_prop')
 btn_publicacion.addEventListener('click', MostrarPublicar)
 
-let btn_comprar = document.getElementsById('btn_comprar_id')
-for(let boton of btn_comprar){
-    boton.addEventListener('click', mostrarConsulta)
-}
 
 let btn_publicar = document.getElementById("btn_publicar").addEventListener("click", function(event){
     event.preventDefault()
