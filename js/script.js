@@ -1,7 +1,5 @@
 
 
-
-
 /**------LISTA DE OBJETOS------------ */
 let listaTerrenos = [
     {
@@ -13,6 +11,7 @@ let listaTerrenos = [
         descripcion: 'Magnífico cráter de 95km cuadrados, a metros de los restos del Luna 21. Ideal para familia numerosa. Espacio para quincho y parrilla'
 
     },
+
     {
         titulo: 'En Oferta',
         precio: 'USD 80.000',
@@ -44,6 +43,9 @@ let listaTerrenos = [
     }
     
 ];
+console.log(listaTerrenos)
+
+
 /**----------Funcion para renderizar los elementos de la lista */
 function agregarTerreno(){
     listaTerrenos.forEach(terreno=>{
@@ -71,32 +73,88 @@ function agregarTerreno(){
             <p class="card-text" id="descripcion">${terreno.descripcion}</p>
         </div>
         <div class="card-footer text-center">
-            <a href="./form.html" class="btn btn-primary"><b>Comprar ya!</b></a>
+            <a name="btn_comprar" id="btn_comprar" class="btn btn-primary"><b>Comprar ya!</b></a>
         </div>
         </div>
         </div>`;
+        
     });
 }
 
-function cargarLista (){
+function cargarLista(){
+    
+    let titulo_terreno = document.getElementById('titulo_terreno');
+    let precio_terreno = document.getElementById('precio_terreno');
+    let imagen_1_terreno = document.getElementById('img-2-terreno');
+    let imagen_2_terreno = document.getElementById('img-3-terreno');
+    let ubicacion_terreno = document.getElementById('ubicacion_terreno');
+    let descripcion_terreno = document.getElementById('descripcion_terreno');
+
     let terreno = {
-        titulo: document.getElementById('titulo').value,
-        precio: document.getElementById('precio').value,
-        imagen: document.getElementById('img-1').value,
-        imagen_opcional_1: document.getElementById('img-2').value,
-        imagen_opcional_2: document.getElementById('img-3').value,
-        ubicacion: document.getElementById('ubicacion').value,
-        descripcion: document.getElementById('descripcion').value
+        titulo: titulo_terreno.value, 
+        precio: precio_terreno.value,
+        imagen_opcional_1: imagen_1_terreno.value,
+        imagen_opcional_2: imagen_2_terreno.value,
+        ubicacion: ubicacion_terreno.value,
+        descripcion: descripcion_terreno.value
     }
     listaTerrenos.push(terreno);
-    window.location.href="./index.html";
+    console.log(terreno)
+    agregarTerreno();
 }
 
 
-window.addEventListener('load', agregarTerreno)
+//-----------------------------VISTAS-----------------------------------------------------------------------------------
 
-let botonPublicar = document.getElementById('btn_enviar')
-console.log(botonPublicar)
+let btn_index = document.getElementById('btn_index')
+btn_index.addEventListener('click', function(){
+    contenedor.classList.remove('oculta')
+    form_contacto.classList.add('oculta')
+    form_publicacion.classList.add('oculta')
+    quienes_somos.classList.add('oculta')
+} )
+
+let btn_info = document.getElementById('btn_info')
+btn_info.addEventListener('click', function(){
+    contenedor.classList.add('oculta')
+    form_contacto.classList.add('oculta')
+    form_publicacion.classList.add('oculta')
+    quienes_somos.classList.remove('oculta')
+})
+
+let btn_publicacion = document.getElementById('btn_prop')
+btn_publicacion.addEventListener('click', function(){
+    contenedor.classList.add('oculta')
+    form_contacto.classList.add('oculta')
+    form_publicacion.classList.remove('oculta')
+    quienes_somos.classList.add('oculta')
+})
+
+let btn_comprar = document.getElementsByName('btn_comprar')
+for(let boton of btn_comprar){
+    boton.addEventListener('click', function(){
+        contenedor.classList.add('oculta')
+        form_contacto.classList.remove('oculta')
+        form_publicacion.classList.add('oculta')
+        quienes_somos.classList.add('oculta')
+    })
+}
+
+
+agregarTerreno();
+
+
+let btn_publicar = document.getElementById('btn_publicar')
+btn_publicar.addEventListener('click', cargarLista)
+
+
+
+
+
+
+
+
+
 
 
 

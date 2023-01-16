@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<script src="./js/script.js"></script>
+
 
 <head>
     <title>Home | Inmobiliaria Cosmos</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/estilos.css">
@@ -16,12 +15,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Macondo&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Rajdhani:wght@500&display=swap"
         rel="stylesheet">
-
-
-
-
-
-
 </head>
 
 <body>
@@ -31,39 +24,181 @@
             <div
                 class="jumbotron bg-jumbotron text-white d-flex flex-column justify-content-center align-items-center text-center">
                 <div class="texto-cabecera">
-                    <h1 class="titulo display-3 text-capitalize text-center">INMOBILIARIA <b>COSMOS</b></h1>
+                    <h1 class="titulo display-3 text-capitalize text-center">INMOBILIARIA<b>COSMOS</b></h1>
                     <hr />
                     <p class="titulo lead text-center"><b><i>Cambiando el futuro de los argentinos</i></b></p>
                 </div>
             </div>
-
         </div>
-
         <!--Cierre cabecera-->
         <div class="row">
             <nav class="nav navbar navbar-dark bg-dark justify-content-start mb-5 bg-opacity-50">
-
-                <a href="./index.html" class="nav-item text-white link mb-2 mt-1">Home</a>
-                <a href="./info.html" class="nav-item text-white link mb-2 mt-1">Quienes somos</a>
-                <a href="./prop.html" class="nav-item text-secondarey link mb-2 mt-1">Publica tu propiedad</a>
+                <a id="btn_index" class="nav-item text-white link mb-2 mt-1">Home</a>
+                <a id="btn_info" class="nav-item text-white link mb-2 mt-1">Quienes somos</a>
+                <a id="btn_prop" class="nav-item text-secondarey link mb-2 mt-1">Publica tu propiedad</a>
             </nav>
         </div>
         <!--Cierre navbar-->
 
 
+        <!------------------------------------------------------------------------------------------------------------------------------>
+
         <!--contenedor-->
         <div class="row mb-5 justify-content-evenly" data-aos="fade-up" data-aos-delay="500" id="contenedor">
 
+        </div>
+
+        <!------------------------------------------------------------------------------------------------------------------------------>
+        <!--informacion-->
+        <div id="quienes_somos" class="row mb-5 justify-content-evenly oculta" data-aos="fade-up" data-aos-delay="500">
+            <div class="info">
+                <h4 class="text-white text-center texto-info">
+                    No es secreto para nadie la era de avances técnologicos en la que vivimos,
+                    por lo tanto es inevitable la expansión humana y la conquista espacial.
+                    Atentos a éste fenómeno desde <b>Inmobiliaria Cosmos</b> decidimos adelantarnos
+                    al
+                    futuro y ofrecerles a los argentinos la posibilidad de adquirir su propio
+                    terreno en nuestra hermana celeste más cercana, la Luna.
+                    No se deje estafar por otras inmobiliarias, <b>Cosmos</b> es la única inmobiliaria nacional
+                    habilitada por el Estado argentino para ofrecer éste servicio.
+                    Lo estamos esperando...Y usted, qué espera para vivir el futuro?
+                </h4>
+            </div>
+        </div>
+
+        <!--------------------------------------------------------------------------------------------------------------------->
+        <!--formulario contacto-->
+
+        <div id="form_contacto" class="row mt-5 mb-5 justify-content-center oculta" data-aos="fade-up"
+            data-aos-delay="500">
+            <h2 class="text-center text-white mb-3">FORMULARIO DE CONTACTO</h2>
+
+            <form action="" class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
+                <!--nombre-->
+                <div class="form-group mb-1 mt-2 ">
+                    <label for="nombre-usuario">Nombre</label>
+                    <input class="form-control" type="text" id="nombre-usuario">
+                </div>
+
+                <!--apellido-->
+                <div class="form-group mb-1 ">
+                    <label for="apellido-usuario">Apellido</label>
+                    <input class="form-control" type="text" id="apellido-usuario">
+                </div>
+
+                <!--telefono-->
+                <div class="form-group mb-1">
+                    <label for="tel-usuario">Telefono</label>
+                    <input class="form-control" type="tel" id="tel-usuario">
+                </div>
+
+                <!--E-mail-->
+                <div class="form-group mb-4 ">
+                    <label for="email-usuario">E-mail</label>
+                    <input class="form-control" type="email" id="email-usuario">
+                </div>
+
+                <!--Tipo de contacto-->
+
+                <label class="mb-2" for="">Tipo de contacto</label>
+                <div class="form-check mb-1">
+                    <input class="form-check-input" type="radio" name="contacto-usuario-tel" id="contacto-usuario-tel">
+                    <label class="form-check-label" for="contacto-usuario-tel">Telefono</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="radio" name="contacto-usuario-email"
+                        id="contacto-usuario-email">
+                    <label class="form-check-label" for="contacto-usuario-email">E-mail</label>
+                </div>
+
+                <!--Horario de contacto-->
+                <div class="form-group form-control mb-2">
+                    <label for="horarios"><b>Seleccionar horario de contacto:</b></label>
+                    <select name="" id="horarios">
+                        <option value="opcion-1">De 07:00hs a 12:00hs</option>
+                        <option value="opcion-2">De 13:00hs a 18:00hs</option>
+                        <option value="opcion-3">De 19:00hs a 24:00hs</option>
+                    </select>
+                </div>
+
+                <!--comentario-->
+                <div class="form-group mt-3">
+                    <label for="comentario">Comentario</label>
+                    <textarea class="form-control" name="comentario" id="comentario" cols="30" rows="5"></textarea>
+                </div>
+
+                <!--terminos y condiciones-->
+                <div class="form-check mt-4">
+                    <input class="form-check-input" type="checkbox" name="terminos" id="terminos">
+                    <label class="form-check-label" for="terminos">Acepto los <a class="text-primary">términos y
+                            condiciones</a>.</label>
+                </div>
+
+                <!--enviar-->
+                <div class="row boton mt-5 mb-4">
+                    <input id="btn_enviar" type="submit" class="btn btn-primary" value="Enviar">
+                </div>
 
 
+            </form>
+
+        </div>
+
+        <!-------------------------------------------------------------------------------------------------------------------->
+        <!--formulario publicacion-->
+        <div id="form_publicacion" class="row mt-5 mb-5 justify-content-center oculta" data-aos="fade-up"
+            data-aos-delay="500">
+            <h2 class="text-center text-white mb-3">PUBLICA TU PROPIEDAD</h2>
+
+            <form id="publicar" class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
+                <!--titulo-->
+                <div class="form-group mb-1 mt-2 ">
+                    <label for="titulo">Titulo</label>
+                    <input class="form-control" type="text" id="titulo_terreno">
+                </div>
+
+                <!--precio-->
+                <div class="form-group mb-1 ">
+                    <label for="precio">Precio</label>
+                    <input class="form-control" type="text" id="precio_terreno" placeholder="USD">
+                </div>
+
+                <!--ubicacion-->
+                <div class="form-group mb-1">
+                    <label for="ubicacion">Ubicacion</label>
+                    <input class="form-control" type="text" id="ubicacion_terreno">
+                </div>
+
+                <!--imagen-->
+                <div class="form-group mb-4 ">
+                    <label for="imagen2">Imagen</label>
+                    <input class="form-control" type="text" id="img-2-terreno"
+                        placeholder="Pegue la URL de la imagen aqui:">
+                </div>
+                <div class="form-group mb-4 ">
+                    <label for="imagen3">Imagen opcional</label>
+                    <input class="form-control" type="text" id="img-3-terreno"
+                        placeholder="Pegue la URL de la imagen aqui:">
+                </div>
+
+                <!--descripcion-->
+                <div class="form-group mt-3">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion_terreno" cols="30"
+                        rows="5"></textarea>
+                </div>
+
+                <!--Publicar-->
+                <div class="row boton mt-5 mb-4">
+                    <button id="btn_publicar" class="btn btn-primary">Publicar</button>
+                </div>
+            </form>
+            <!--------------------------------------------------------------------------------------------------------------------->
 
 
         </div>
 
-
-        <!--Cierre tarjetas-->
-
-
+        <!--Cierre pie de pagina-->
         <div class="row pie">
             <footer class="bg-dark text-white text-center p-4 opacity-50">
                 <p>Desarrollado por <b>Pablo Percara</b> para <b><i>Coderhouse</i></b></p>
@@ -73,15 +208,13 @@
 
     </div>
     <!--Cierre div container-->
-
-
-
     </div>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

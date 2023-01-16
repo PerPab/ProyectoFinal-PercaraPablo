@@ -48,19 +48,19 @@ body{
 }
 .info{
     
-        background-color: rgb(0,0,0); 
-        background-color: rgba(0,0,0, 0.6); 
-        color: white;
-        border: 3px solid #f1f1f1;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        line-height: 25px;
-        padding: 8rem;
-        padding-left: 8rem;
-        padding-right: 8rem;
-        width: 50%;
-        height: 80%;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.6); 
+    color: white;
+    border: 3px solid #f1f1f1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+    padding: 8rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    width: 50%;
+    height: 80%;
         
     
     
@@ -68,6 +68,10 @@ body{
 .cards{
     width: 20rem;
     height: 575px;
+}
+
+.oculta{
+    display: none;
 }
 
 
