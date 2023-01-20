@@ -101,14 +101,17 @@
 
                 <!--Tipo de contacto-->
 
-                <label class="mb-2" for="">Tipo de contacto</label>
+                <label class="mb-2" for="contacto-usuario">Metodo de contacto</label>
+
                 <div class="form-check mb-1">
-                    <input class="form-check-input" type="radio" name="contacto-usuario-tel" id="contacto-usuario-tel">
+                    <input class="form-check-input" type="radio" name="contacto-usuario" id="contacto-usuario-tel"
+                        value="Telefono">
                     <label class="form-check-label" for="contacto-usuario-tel">Telefono</label>
                 </div>
+
                 <div class="form-check mb-4">
-                    <input class="form-check-input" type="radio" name="contacto-usuario-email"
-                        id="contacto-usuario-email">
+                    <input class="form-check-input" type="radio" name="contacto-usuario" id="contacto-usuario-email"
+                        value="E-mail" checked>
                     <label class="form-check-label" for="contacto-usuario-email">E-mail</label>
                 </div>
 
@@ -116,21 +119,21 @@
                 <div class="form-group form-control mb-2">
                     <label for="horarios"><b>Seleccionar horario de contacto:</b></label>
                     <select name="" id="horarios">
-                        <option value="opcion-1">De 07:00hs a 12:00hs</option>
-                        <option value="opcion-2">De 13:00hs a 18:00hs</option>
-                        <option value="opcion-3">De 19:00hs a 24:00hs</option>
+                        <option value="07:00hs a 12:00hs">De 07:00hs a 12:00hs</option>
+                        <option value="13:00hs a 18:00hs">De 13:00hs a 18:00hs</option>
+                        <option value="19:00hs a 24:00hs">De 19:00hs a 24:00hs</option>
                     </select>
                 </div>
 
                 <!--comentario-->
                 <div class="form-group mt-3">
-                    <label for="comentario">Comentario</label>
+                    <label for="comentario">Comentarios</label>
                     <textarea class="form-control" name="comentario" id="comentario" cols="30" rows="5"></textarea>
                 </div>
 
                 <!--terminos y condiciones-->
                 <div class="form-check mt-4">
-                    <input class="form-check-input" type="checkbox" name="terminos" id="terminos">
+                    <input class="form-check-input" type="checkbox" name="terminos" id="terminos" required>
                     <label class="form-check-label" for="terminos">Acepto los <a class="text-primary">términos y
                             condiciones</a>.</label>
                 </div>
@@ -193,7 +196,9 @@
         <!--Cierre pie de pagina-->
         <div class="row pie">
             <footer class="bg-dark text-white text-center p-4 opacity-50">
-                <p>Desarrollado por <b>Pablo Percara</b> para <b><i>Coderhouse</i></b></p>
+                <p>Desarrollado por <b><a href="https://www.linkedin.com/in/pablo-percara/">Pablo Percara</a></b> para
+                    <b><i>Coderhouse</i></b>
+                </p>
             </footer>
         </div>
         <!--Cierre footer-->

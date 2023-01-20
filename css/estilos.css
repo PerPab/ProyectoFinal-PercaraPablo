@@ -11,6 +11,7 @@
 
 body{
     width: 100%;
+    zoom: 85%;
     
 }
 .bg-jumbotron{
@@ -68,6 +69,7 @@ body{
 .cards{
     width: 20rem;
     height: 575px;
+    
 }
 
 .oculta{
@@ -126,6 +128,9 @@ body{
    }
    .jumbotron{
     height: 60%;
+   }
+   body{
+    zoom: normal;
    }
     
   }

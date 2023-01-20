@@ -122,7 +122,6 @@ function ordenarMenorAmayor(){
     mostrarPrincipal()
 }
   
-
 function mostrarPrincipal(){
     contenedor.classList.remove('oculta')
     form_contacto.classList.add('oculta')
@@ -154,17 +153,56 @@ function MostrarPublicar(){
 function actualizarBotones(){
     let btn_comprar = document.querySelectorAll('.btn_comprar_clase')
     btn_comprar.forEach(boton =>{
-        console.log(boton)
         boton.addEventListener('click', mostrarConsulta)
     });
 }
 
+function guardarDatosCliente(){
+    let nombre = document.getElementById('nombre-usuario')
+    let apellido = document.getElementById('apellido-usuario')
+    let telefono = document.getElementById('tel-usuario')
+    let eMail = document.getElementById("email-usuario")
+    let horario = document.getElementById("horarios").value
+    let comentario = document.getElementById('comentario').value
+    let terminos = document.getElementById('terminos')
 
+    if((nombre.value).trim() === ''){
+        nombre.setAttribute('placeholder', 'Este campo no debe quedar vacio')
+    }
+    if((apellido.value).trim()===''){
+        apellido.setAttribute('placeholder', 'Este campo no debe quedar vacio')
+    }
+    if((telefono.value).trim()===''){
+        telefono.setAttribute('placeholder', 'Este campo no debe quedar vacio')
+    }
+    if((eMail.value).trim()===''){
+        eMail.setAttribute('placeholder', 'Este campo no debe quedar vacio')
+    }
+
+    if(!terminos.checked){
+        alert("Debe aceptar nuestros terminos y condiciones para podes continuar")
+       }else{
+        let cliente = {
+            nombre: nombre.value,
+            apellido: apellido.value,
+            telefono: telefono.value,
+            email: eMail.value,
+            horario_de_contacto: horario,
+            comentario: comentario
+        }
+        localStorage.setItem(`${nombre.value}${apellido.value}`, JSON.stringify(cliente))
+        devolverCliente(nombre.value, apellido.value)
+       }
+}
+
+function devolverCliente(nombre, apellido){//Funcion para testeo
+    let listaClientes= JSON.parse(localStorage.getItem(`${nombre}${apellido}`))
+    console.log(listaClientes)
+}
 //-----------------------------VISTAS-----------------------------------------------------------------------------------
 
 let btn_index = document.getElementById('btn_index')
 btn_index.addEventListener('click', mostrarPrincipal)
-
 
 let btn_info = document.getElementById('btn_info')
 btn_info.addEventListener('click', mostrarInfo)
@@ -172,11 +210,13 @@ btn_info.addEventListener('click', mostrarInfo)
 let btn_publicacion = document.getElementById('btn_prop')
 btn_publicacion.addEventListener('click', MostrarPublicar)
 
-
 let btn_publicar = document.getElementById("btn_publicar").addEventListener("click", function(event){
     event.preventDefault()
     cargarLista()
 });
+
+let btn_enviar = document.getElementById('btn_enviar')
+btn_enviar.addEventListener('click', guardarDatosCliente)
 
 let btn_ordenar = document.getElementById('ordenar')
 btn_ordenar.addEventListener('click', ordenarMenorAmayor)
