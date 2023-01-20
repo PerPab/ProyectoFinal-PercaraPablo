@@ -1,5 +1,8 @@
 
-window.addEventListener('load', mostrarPrincipal)
+window.addEventListener('load',()=>{
+    mostrarPrincipal(); 
+})
+
 /**------LISTA DE OBJETOS------------ */
 let listaTerrenos = [
     {
@@ -105,6 +108,7 @@ function cargarLista(){
         }
         listaTerrenos.push(terreno);
         formulario.reset()
+        guardarListaTerrenos()
         mostrarPrincipal()  
     }
 }
@@ -199,7 +203,13 @@ function devolverCliente(nombre, apellido){//Funcion para testeo
     let listaClientes= JSON.parse(localStorage.getItem(`${nombre}${apellido}`))
     console.log(listaClientes)
 }
-//-----------------------------VISTAS-----------------------------------------------------------------------------------
+function guardarListaTerrenos(){
+    localStorage.setItem('ListaTerrenos', JSON.stringify(listaTerrenos))
+}
+function recuperarListaTerrenos(){
+    return listaTerrenos = JSON.parse(localStorage.getItem('listaTerrenos'))   
+}
+//-----------------------------VISTAS Y BOTONES-----------------------------------------------------------------------------------
 
 let btn_index = document.getElementById('btn_index')
 btn_index.addEventListener('click', mostrarPrincipal)
@@ -225,7 +235,11 @@ btn_ordenar.addEventListener('click', ordenarMenorAmayor)
 
 
 
+let prueba = JSON.parse(localStorage.getItem('listaTerrenos'))  
 
+
+
+console.log(prueba)
 
 
 
