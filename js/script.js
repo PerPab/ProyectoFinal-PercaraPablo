@@ -1,5 +1,7 @@
 
 window.addEventListener('load',()=>{
+    //guardarListaTerrenos();
+    recuperarListaTerrenos()
     mostrarPrincipal(); 
 })
 
@@ -46,6 +48,9 @@ let listaTerrenos = [
 /**----------FUNCIONES----------------------------------------------------------------------------------------- */
 function agregarTerreno(){
     let contenedor = document.getElementById('contenedor');
+    if(localStorage.getItem('ListaTerrenos')){
+        listaTerrenos = recuperarListaTerrenos();
+    }
     contenedor.innerHTML='';
     listaTerrenos.forEach(terreno=>{
         contenedor.innerHTML +=
@@ -207,7 +212,7 @@ function guardarListaTerrenos(){
     localStorage.setItem('ListaTerrenos', JSON.stringify(listaTerrenos))
 }
 function recuperarListaTerrenos(){
-    return listaTerrenos = JSON.parse(localStorage.getItem('listaTerrenos'))   
+    return listaTerrenos = JSON.parse(localStorage.getItem('ListaTerrenos'))   
 }
 //-----------------------------VISTAS Y BOTONES-----------------------------------------------------------------------------------
 
@@ -235,11 +240,7 @@ btn_ordenar.addEventListener('click', ordenarMenorAmayor)
 
 
 
-let prueba = JSON.parse(localStorage.getItem('listaTerrenos'))  
 
-
-
-console.log(prueba)
 
 
 
