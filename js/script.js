@@ -44,13 +44,51 @@ let listaTerrenos = [
     }
     
 ];
+let bd = [
+    {
+        titulo: 'En Oferta',
+        precio: 95000,
+        imagen_opcional_1: './img/carousel-1/card1-2.png',
+        ubicacion: 'Posidonius',
+        descripcion: 'Magnífico cráter de 95km cuadrados, a metros de los restos del Luna 21. Ideal para familia numerosa. Espacio para quincho y parrilla'
+
+    },
+
+    {
+        titulo: 'En Oferta',
+        precio: 80000,
+        imagen_opcional_1: './img/carousel-2/card2-2.png',
+        ubicacion: 'Fabbroni',
+        descripcion: 'Pequeño y acogedor cráter de 10km cuadrados. Ubicado cerca de los restos de la misión Apollo 17. Date el gusto de fotografiar a la familia Armstrong!'
+
+    },
+
+    {
+        titulo: 'En Oferta',
+        precio: 105000,
+        imagen_opcional_1: './img/carousel-3/card-3-2.png',
+        ubicacion: 'Lacus Bonitatis',
+        descripcion: 'Si vivir en un cráter no es lo tuyo te traemos ésta planicie de 92km cuadrados. Oportunidad para emprendedores cancha de Paddle.'
+
+    },
+
+    {
+        titulo: 'Oportunidad',
+        precio: 50000,
+        imagen_opcional_1: './img/1601.png',
+        ubicacion: 'Lado oscuro de la luna',
+        descripcion: 'Esta propiedad a precio regalado no tiene desperdicio, ubicada en el lado oscuro de la luna un lugar ideal para aquellos que son fotosensibles.'
+
+    }
+    
+];
 
 /**----------FUNCIONES----------------------------------------------------------------------------------------- */
 function agregarTerreno(){//RENDERIZA UNA LISTA DE TERRENOS EN LA PAGINA PRINCIPAL
     let contenedor = document.getElementById('contenedor');
     if(localStorage.getItem('ListaTerrenos')){
         listaTerrenos = recuperarListaTerrenos();
-    }
+    }else{ listaTerrenos = bd}
     contenedor.innerHTML='';
     listaTerrenos.forEach(terreno=>{
         contenedor.innerHTML +=
@@ -212,7 +250,7 @@ function guardarListaTerrenos(){//GUARDA LA LISTA DE TERRENOS EN LOCALSTORAGE
     localStorage.setItem('ListaTerrenos', JSON.stringify(listaTerrenos))
 }
 function recuperarListaTerrenos(){//RETORNA LA LISTA DE TERRENOS GUARDADA EN LOCALSTORAGE
-    return listaTerrenos = JSON.parse(localStorage.getItem('ListaTerrenos'))   
+    return listaTerrenos = JSON.parse(localStorage.getItem('ListaTerrenos')) || [];
 }
 //-----------------------------VISTAS Y BOTONES-----------------------------------------------------------------------------------
 
