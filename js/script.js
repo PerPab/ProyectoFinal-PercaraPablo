@@ -46,7 +46,7 @@ let listaTerrenos = [
 ];
 
 /**----------FUNCIONES----------------------------------------------------------------------------------------- */
-function agregarTerreno(){
+function agregarTerreno(){//RENDERIZA UNA LISTA DE TERRENOS EN LA PAGINA PRINCIPAL
     let contenedor = document.getElementById('contenedor');
     if(localStorage.getItem('ListaTerrenos')){
         listaTerrenos = recuperarListaTerrenos();
@@ -80,7 +80,7 @@ function agregarTerreno(){
         
     });
 }
-function cargarLista(){
+function cargarLista(){//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIEDAD EN LA LISTA DE TERRENOS
     let formulario = document.getElementById('publicar');
     let titulo_terreno = document.getElementById('titulo_terreno');
     let precio_terreno = document.getElementById('precio_terreno');
@@ -118,7 +118,7 @@ function cargarLista(){
     }
 }
 
-function ordenarMenorAmayor(){
+function ordenarMenorAmayor(){//ORDENA LAS PROPIEDADES PUBLICADAS
     listaTerrenos.sort(function (a, b) {
     if (a.precio > b.precio) {
       return 1;
@@ -131,7 +131,7 @@ function ordenarMenorAmayor(){
     mostrarPrincipal()
 }
   
-function mostrarPrincipal(){
+function mostrarPrincipal(){//MUESTRA LA PANTALLA PRINCIPAL
     contenedor.classList.remove('oculta')
     form_contacto.classList.add('oculta')
     form_publicacion.classList.add('oculta')
@@ -139,20 +139,20 @@ function mostrarPrincipal(){
     agregarTerreno()
     actualizarBotones()
 }
-function mostrarInfo(){
+function mostrarInfo(){//MUESTRA LA SECCION QUIENES SOMOS
     contenedor.classList.add('oculta')
     form_contacto.classList.add('oculta')
     form_publicacion.classList.add('oculta')
     quienes_somos.classList.remove('oculta')
 }
 
-function mostrarConsulta(){
+function mostrarConsulta(){//MUESTRA FORMULARIO DE CONSULTA (BOTON COMPRAR)
     contenedor.classList.add('oculta')
     form_contacto.classList.remove('oculta')
     form_publicacion.classList.add('oculta')
     quienes_somos.classList.add('oculta')
 }
-function MostrarPublicar(){
+function MostrarPublicar(){//MUESTRA EL FORMULARIO PARA PUBLICAR PROPIEDADES
     contenedor.classList.add('oculta')
     form_contacto.classList.add('oculta')
     form_publicacion.classList.remove('oculta')
@@ -166,7 +166,7 @@ function actualizarBotones(){
     });
 }
 
-function guardarDatosCliente(){
+function guardarDatosCliente(){//TOMA DATOS DEL FORM DE CONSULTAS Y LOS GUARDA EN LOCALSTORAGE
     let nombre = document.getElementById('nombre-usuario')
     let apellido = document.getElementById('apellido-usuario')
     let telefono = document.getElementById('tel-usuario')
@@ -208,10 +208,10 @@ function devolverCliente(nombre, apellido){//Funcion para testeo
     let listaClientes= JSON.parse(localStorage.getItem(`${nombre}${apellido}`))
     console.log(listaClientes)
 }
-function guardarListaTerrenos(){
+function guardarListaTerrenos(){//GUARDA LA LISTA DE TERRENOS EN LOCALSTORAGE
     localStorage.setItem('ListaTerrenos', JSON.stringify(listaTerrenos))
 }
-function recuperarListaTerrenos(){
+function recuperarListaTerrenos(){//RETORNA LA LISTA DE TERRENOS GUARDADA EN LOCALSTORAGE
     return listaTerrenos = JSON.parse(localStorage.getItem('ListaTerrenos'))   
 }
 //-----------------------------VISTAS Y BOTONES-----------------------------------------------------------------------------------
