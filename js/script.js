@@ -1,6 +1,5 @@
 
 window.addEventListener('load',()=>{
-    //guardarListaTerrenos();
     recuperarListaTerrenos()
     mostrarPrincipal(); 
 })
@@ -129,8 +128,8 @@ function cargarLista(){//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIED
     if((titulo_terreno.value).trim() == ''){
         titulo_terreno.setAttribute('placeholder','Este campo no puede quedar vacio!')
         
-    }else if((precio_terreno.value).trim()==''){
-        precio_terreno.setAttribute('placeholder','Este campo no puede quedar vacio!')
+    }else if((precio_terreno.value).trim()=='' || Number.isNaN(precio_terreno.value) ){
+        precio_terreno.setAttribute('placeholder','Ingrese un valor numerico valido')
        
     }else if((ubicacion_terreno.value).trim()==''){
         ubicacion_terreno.setAttribute('placeholder','Este campo no puede quedar vacio!')
