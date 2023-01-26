@@ -1,7 +1,7 @@
 
-window.addEventListener('load',()=>{
-    recuperarListaTerrenos()
-    mostrarPrincipal(); 
+window.addEventListener('load', () => {
+    localStorage.getItem('listaTerrenos') ? recuperarListaTerrenos(listaTerrenos) : agregarTerreno(bd)
+    mostrarPrincipal();
 })
 
 /**------LISTA DE OBJETOS------------ */
@@ -41,7 +41,7 @@ let listaTerrenos = [
         descripcion: 'Esta propiedad a precio regalado no tiene desperdicio, ubicada en el lado oscuro de la luna un lugar ideal para aquellos que son fotosensibles.'
 
     }
-    
+
 ];
 let bd = [
     {
@@ -79,19 +79,16 @@ let bd = [
         descripcion: 'Esta propiedad a precio regalado no tiene desperdicio, ubicada en el lado oscuro de la luna un lugar ideal para aquellos que son fotosensibles.'
 
     }
-    
+
 ];
 
 /**----------FUNCIONES----------------------------------------------------------------------------------------- */
-function agregarTerreno(){//RENDERIZA UNA LISTA DE TERRENOS EN LA PAGINA PRINCIPAL
+function agregarTerreno(listaTerrenos) {//RENDERIZA UNA LISTA DE TERRENOS EN LA PAGINA PRINCIPAL
     let contenedor = document.getElementById('contenedor');
-    if(localStorage.getItem('listaTerrenos')){
-        listaTerrenos = recuperarListaTerrenos();
-    }else{ listaTerrenos = bd}
-    contenedor.innerHTML='';
-    listaTerrenos.forEach(terreno=>{
+    contenedor.innerHTML = '';
+    listaTerrenos.forEach(terreno => {
         contenedor.innerHTML +=
-        `<div class="col col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3 tarjeta">
+            `<div class="col col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-3 tarjeta">
         <div class="card cards">
         <div class="card-header text-center">
             <h2 class="card-title text-danger" id="titulo"><b>${terreno.titulo}</b></h2>
@@ -114,10 +111,10 @@ function agregarTerreno(){//RENDERIZA UNA LISTA DE TERRENOS EN LA PAGINA PRINCIP
         </div>
         </div>
         </div>`;
-        
+
     });
 }
-function cargarLista(){//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIEDAD EN LA LISTA DE TERRENOS
+function cargarLista() {//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIEDAD EN LA LISTA DE TERRENOS
     let formulario = document.getElementById('publicar');
     let titulo_terreno = document.getElementById('titulo_terreno');
     let precio_terreno = document.getElementById('precio_terreno');
@@ -125,24 +122,24 @@ function cargarLista(){//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIED
     let ubicacion_terreno = document.getElementById('ubicacion_terreno');
     let descripcion_terreno = document.getElementById('descripcion_terreno');
 
-    if((titulo_terreno.value).trim() == ''){
-        titulo_terreno.setAttribute('placeholder','Este campo no puede quedar vacio!')
-        
-    }else if((precio_terreno.value).trim()=='' || Number.isNaN(precio_terreno.value) ){
-        precio_terreno.setAttribute('placeholder','Ingrese un valor numerico valido')
-       
-    }else if((ubicacion_terreno.value).trim()==''){
-        ubicacion_terreno.setAttribute('placeholder','Este campo no puede quedar vacio!')
+    if ((titulo_terreno.value).trim() == '') {
+        titulo_terreno.setAttribute('placeholder', 'Este campo no puede quedar vacio!')
 
-    }else if((imagen_1_terreno.value).trim()==''){
-        imagen_1_terreno.setAttribute('placeholder','Este campo no puede quedar vacio!')
-     
-    }else if((descripcion_terreno.value).trim()==''){
-        descripcion_terreno.setAttribute('placeholder','Este campo no puede quedar vacio!') 
+    } else if ((precio_terreno.value).trim() == '' || Number.isNaN(precio_terreno.value)) {
+        precio_terreno.setAttribute('placeholder', 'Ingrese un valor numerico valido')
+
+    } else if ((ubicacion_terreno.value).trim() == '') {
+        ubicacion_terreno.setAttribute('placeholder', 'Este campo no puede quedar vacio!')
+
+    } else if ((imagen_1_terreno.value).trim() == '') {
+        imagen_1_terreno.setAttribute('placeholder', 'Este campo no puede quedar vacio!')
+
+    } else if ((descripcion_terreno.value).trim() == '') {
+        descripcion_terreno.setAttribute('placeholder', 'Este campo no puede quedar vacio!')
     }
-    else{
+    else {
         let terreno = {
-            titulo: titulo_terreno.value, 
+            titulo: titulo_terreno.value,
             precio: Number(precio_terreno.value),
             imagen_opcional_1: imagen_1_terreno.value,
             ubicacion: ubicacion_terreno.value,
@@ -150,7 +147,7 @@ function cargarLista(){//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIED
         }
         listaTerrenos.push(terreno);
         formulario.reset()
-        guardarListaTerrenos()
+        guardarListaTerrenos(listaTerrenos)
         swal({
             title: "Muy bien!",
             text: "La propiedad se publico correctamente",
@@ -158,61 +155,59 @@ function cargarLista(){//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIED
             timer: 2500,
             button: false,
         });
-        mostrarPrincipal()  
+        mostrarPrincipal()
     }
 }
 
-function ordenarMenorAmayor(){//ORDENA LAS PROPIEDADES PUBLICADAS
-    let lista = [...recuperarListaTerrenos()]
-    console.log(lista)
-    lista.sort(function (a, b) {
-    if (a.precio > b.precio) {
-      return 1;
-    }
-    if (a.precio < b.precio) {
-      return -1;
-    }
-    return 0;
+function ordenarMenorAmayor() {//ORDENA LAS PROPIEDADES PUBLICADAS
+    listaTerrenos.sort(function (a, b) {
+        if (a.precio > b.precio) {
+            return 1;
+        }
+        if (a.precio < b.precio) {
+            return -1;
+        }
+        return 0;
     });
     mostrarPrincipal()
 }
-  
-function mostrarPrincipal(){//MUESTRA LA PANTALLA PRINCIPAL
+
+function mostrarPrincipal() {//MUESTRA LA PANTALLA PRINCIPAL
     contenedor.classList.remove('oculta')
     form_contacto.classList.add('oculta')
     form_publicacion.classList.add('oculta')
     quienes_somos.classList.add('oculta')
-    agregarTerreno()
+    agregarTerreno(listaTerrenos)
     actualizarBotones()
 }
-function mostrarInfo(){//MUESTRA LA SECCION QUIENES SOMOS
+function mostrarInfo() {//MUESTRA LA SECCION QUIENES SOMOS
     contenedor.classList.add('oculta')
     form_contacto.classList.add('oculta')
     form_publicacion.classList.add('oculta')
     quienes_somos.classList.remove('oculta')
 }
 
-function mostrarConsulta(){//MUESTRA FORMULARIO DE CONSULTA (BOTON COMPRAR)
+function mostrarConsulta() {//MUESTRA FORMULARIO DE CONSULTA (BOTON COMPRAR)
     contenedor.classList.add('oculta')
     form_contacto.classList.remove('oculta')
     form_publicacion.classList.add('oculta')
     quienes_somos.classList.add('oculta')
 }
-function MostrarPublicar(){//MUESTRA EL FORMULARIO PARA PUBLICAR PROPIEDADES
+function MostrarPublicar() {//MUESTRA EL FORMULARIO PARA PUBLICAR PROPIEDADES
     contenedor.classList.add('oculta')
     form_contacto.classList.add('oculta')
     form_publicacion.classList.remove('oculta')
     quienes_somos.classList.add('oculta')
 }
 
-function actualizarBotones(){
+function actualizarBotones() {
     let btn_comprar = document.querySelectorAll('.btn_comprar_clase')
-    btn_comprar.forEach(boton =>{
+    btn_comprar.forEach(boton => {
         boton.addEventListener('click', mostrarConsulta)
     });
 }
 
-function guardarDatosCliente(){//TOMA DATOS DEL FORM DE CONSULTAS Y LOS GUARDA EN LOCALSTORAGE
+function guardarDatosCliente() {//TOMA DATOS DEL FORM DE CONSULTAS Y LOS GUARDA EN LOCALSTORAGE
     let nombre = document.getElementById('nombre-usuario')
     let apellido = document.getElementById('apellido-usuario')
     let telefono = document.getElementById('tel-usuario')
@@ -221,28 +216,28 @@ function guardarDatosCliente(){//TOMA DATOS DEL FORM DE CONSULTAS Y LOS GUARDA E
     let comentario = document.getElementById('comentario').value
     let terminos = document.getElementById('terminos')
 
-    if((nombre.value).trim() === ''){
+    if ((nombre.value).trim() === '') {
         nombre.setAttribute('placeholder', 'Este campo no debe quedar vacio')
     }
-    if((apellido.value).trim()===''){
+    if ((apellido.value).trim() === '') {
         apellido.setAttribute('placeholder', 'Este campo no debe quedar vacio')
     }
-    if((telefono.value).trim()===''){
+    if ((telefono.value).trim() === '') {
         telefono.setAttribute('placeholder', 'Este campo no debe quedar vacio')
     }
-    if((eMail.value).trim()===''){
+    if ((eMail.value).trim() === '') {
         eMail.setAttribute('placeholder', 'Este campo no debe quedar vacio')
     }
 
-    if(!terminos.checked){
+    if (!terminos.checked) {
         swal({
             title: "Atención",
             text: "Debes aceptar nuestros términos y condiciones para continuar",
             icon: "warning",
             timer: 2500,
             button: false,
-          });
-       }else{
+        });
+    } else {
         let cliente = {
             nombre: nombre.value,
             apellido: apellido.value,
@@ -253,18 +248,18 @@ function guardarDatosCliente(){//TOMA DATOS DEL FORM DE CONSULTAS Y LOS GUARDA E
         }
         localStorage.setItem(`${nombre.value}${apellido.value}`, JSON.stringify(cliente))
         devolverCliente(nombre.value, apellido.value)
-       }
+    }
 }
 
-function devolverCliente(nombre, apellido){//Funcion para testeo
-    let listaClientes= JSON.parse(localStorage.getItem(`${nombre}${apellido}`))
+function devolverCliente(nombre, apellido) {//Funcion para testeo
+    let listaClientes = JSON.parse(localStorage.getItem(`${nombre}${apellido}`))
     console.log(listaClientes)
 }
-function guardarListaTerrenos(){//GUARDA LA LISTA DE TERRENOS EN LOCALSTORAGE
+function guardarListaTerrenos(listaTerrenos) {//GUARDA LA LISTA DE TERRENOS EN LOCALSTORAGE
     localStorage.setItem('listaTerrenos', JSON.stringify(listaTerrenos))
 }
-function recuperarListaTerrenos(){//RETORNA LA LISTA DE TERRENOS GUARDADA EN LOCALSTORAGE
-    return listaTerrenos = JSON.parse(localStorage.getItem('listaTerrenos')) || [];
+function recuperarListaTerrenos() {//RETORNA LA LISTA DE TERRENOS GUARDADA EN LOCALSTORAGE
+    return listaTerrenos = JSON.parse(localStorage.getItem('listaTerrenos'));
 }
 //-----------------------------VISTAS Y BOTONES-----------------------------------------------------------------------------------
 
@@ -277,7 +272,7 @@ btn_info.addEventListener('click', mostrarInfo)
 let btn_publicacion = document.getElementById('btn_prop')
 btn_publicacion.addEventListener('click', MostrarPublicar)
 
-let btn_publicar = document.getElementById("btn_publicar").addEventListener("click", function(event){
+let btn_publicar = document.getElementById("btn_publicar").addEventListener("click", function (event) {
     event.preventDefault()
     cargarLista()
 });
