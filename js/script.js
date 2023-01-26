@@ -85,7 +85,7 @@ let bd = [
 /**----------FUNCIONES----------------------------------------------------------------------------------------- */
 function agregarTerreno(){//RENDERIZA UNA LISTA DE TERRENOS EN LA PAGINA PRINCIPAL
     let contenedor = document.getElementById('contenedor');
-    if(localStorage.getItem('ListaTerrenos')){
+    if(localStorage.getItem('listaTerrenos')){
         listaTerrenos = recuperarListaTerrenos();
     }else{ listaTerrenos = bd}
     contenedor.innerHTML='';
@@ -151,12 +151,21 @@ function cargarLista(){//TOMA LOS DATOS DEL FORMULARIO Y GUARDA LA NUEVA PROPIED
         listaTerrenos.push(terreno);
         formulario.reset()
         guardarListaTerrenos()
+        swal({
+            title: "Muy bien!",
+            text: "La propiedad se publico correctamente",
+            icon: "success",
+            timer: 2500,
+            button: false,
+        });
         mostrarPrincipal()  
     }
 }
 
 function ordenarMenorAmayor(){//ORDENA LAS PROPIEDADES PUBLICADAS
-    listaTerrenos.sort(function (a, b) {
+    let lista = [...recuperarListaTerrenos()]
+    console.log(lista)
+    lista.sort(function (a, b) {
     if (a.precio > b.precio) {
       return 1;
     }
@@ -226,7 +235,13 @@ function guardarDatosCliente(){//TOMA DATOS DEL FORM DE CONSULTAS Y LOS GUARDA E
     }
 
     if(!terminos.checked){
-        alert("Debe aceptar nuestros terminos y condiciones para podes continuar")
+        swal({
+            title: "Atención",
+            text: "Debes aceptar nuestros términos y condiciones para continuar",
+            icon: "warning",
+            timer: 2500,
+            button: false,
+          });
        }else{
         let cliente = {
             nombre: nombre.value,
@@ -246,10 +261,10 @@ function devolverCliente(nombre, apellido){//Funcion para testeo
     console.log(listaClientes)
 }
 function guardarListaTerrenos(){//GUARDA LA LISTA DE TERRENOS EN LOCALSTORAGE
-    localStorage.setItem('ListaTerrenos', JSON.stringify(listaTerrenos))
+    localStorage.setItem('listaTerrenos', JSON.stringify(listaTerrenos))
 }
 function recuperarListaTerrenos(){//RETORNA LA LISTA DE TERRENOS GUARDADA EN LOCALSTORAGE
-    return listaTerrenos = JSON.parse(localStorage.getItem('ListaTerrenos')) || [];
+    return listaTerrenos = JSON.parse(localStorage.getItem('listaTerrenos')) || [];
 }
 //-----------------------------VISTAS Y BOTONES-----------------------------------------------------------------------------------
 
