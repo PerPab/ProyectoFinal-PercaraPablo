@@ -30,12 +30,22 @@
             </div>
         </div>
         <!--Cierre cabecera-->
-        <div class="row">
-            <nav class="nav navbar navbar-dark bg-dark justify-content-start mb-5 bg-opacity-50">
-                <a id="btn_index" class="nav-item text-white link mb-2 mt-1">Home</a>
-                <a id="btn_info" class="nav-item text-white link mb-2 mt-1">Quienes somos</a>
-                <a id="btn_prop" class="nav-item text-secondarey link mb-2 mt-1">Publica tu propiedad</a>
-                <a id="ordenar" class="nav-item text-secondarey link mb-2 mt-1">Ordenar por precio</a>
+        <div class="row navbar-contenedor">
+            <nav class="nav navbar navbar-dark bg-dark  mb-3 bg-opacity-50 ">
+                <div class="nav">
+                    <a id="btn_index" class="nav-item text-white link mb-2 mt-1">Home</a>
+                    <a id="btn_info" class="nav-item text-white link mb-2 mt-1">Quienes somos</a>
+                    <a id="btn_prop" class="nav-item text-primary link mb-2 mt-1">Publica tu propiedad</a>
+                    <a id="ordenar" class="nav-item text-primary link mb-2 mt-1">Ordenar por precio</a>
+                </div>
+                <div class="nav">
+                    <label class="nav-item text-secondary link mb-2 mt-1">Dolar Blue</label>
+                    <label class="nav-item text-secondary link mb-2 mt-1">Compra:</label>
+                    <label id="compra" class="nav-item text-info link mb-2 mt-1">0</label>
+                    <label class="nav-item text-secondary link mb-2 mt-1">Venta:</label>
+                    <label id="venta" class="nav-item text-info link mb-2 mt-1">0</label>
+                </div>
+
             </nav>
         </div>
         <!--Cierre navbar-->
@@ -43,7 +53,7 @@
         <!------------------------------------------------------------------------------------------------------------------------------>
 
         <!--contenedor-->
-        <div class="row mb-5 justify-content-evenly" data-aos="fade-up" data-aos-delay="500" id="contenedor">
+        <div class=" row mb-5 justify-content-evenly" data-aos="fade-up" data-aos-delay="500" id="contenedor">
 
         </div>
         <!------------------------------------------------------------------------------------------------------------------------------>
@@ -67,11 +77,11 @@
         <!--------------------------------------------------------------------------------------------------------------------->
         <!--formulario contacto-->
 
-        <div id="form_contacto" class="row mt-5 mb-5 justify-content-center oculta" data-aos="fade-up"
+        <div id="form_contacto" class="row mt-3 mb-5 justify-content-center oculta" data-aos="fade-up"
             data-aos-delay="500">
             <h2 class="text-center text-white mb-3">FORMULARIO DE CONTACTO</h2>
 
-            <form class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
+            <form id="formulario" class="formulario col-12 border bg-dark bg-opacity-50 text-white ">
                 <!--nombre-->
                 <div class="form-group mb-1 mt-2 ">
                     <label for="nombre-usuario">Nombre</label>
@@ -145,7 +155,7 @@
         <!-------------------------------------------------------------------------------------------------------------------->
         <!--formulario publicacion-->
 
-        <div id="form_publicacion" class="row mt-5 mb-5 justify-content-center oculta" data-aos="fade-up"
+        <div id="form_publicacion" class="row mt-3 mb-3 justify-content-center oculta" data-aos="fade-up"
             data-aos-delay="500">
             <h2 class="text-center text-white mb-3">PUBLICA TU PROPIEDAD</h2>
 

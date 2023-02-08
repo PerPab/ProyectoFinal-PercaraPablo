@@ -10,8 +10,6 @@
 }
 body{
     width: 100%;
-    
-   
 }
 .bg-jumbotron{
     background-image: url(../img/fondo-blur-moon.jpg);
@@ -82,15 +80,16 @@ body{
     height: 225px;
 }
 
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 640px) {
-    .nav{
-        
-        flex-direction: column;
-        justify-content: center;
-    }
-    .formulario{
-        width: 100%;
-    }
+.nav{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario{
+    width: 100%;
+}
    .cards{
         width:100%;
    }
@@ -115,8 +114,4 @@ body{
     
   }
 
-
-
-
-   
 
